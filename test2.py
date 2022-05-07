@@ -5,7 +5,10 @@ from requests_html import HTMLSession
 
 import dearpygui.dearpygui as dpg
 
-
+def changerLieu(sender,data,userdata):
+    print(sender)
+    print(data)
+    
 
 
 session = HTMLSession()
@@ -46,9 +49,11 @@ dpg.create_viewport(title='Custom Title', width=600, height=300)
 
 with dpg.window(label="Ma météo :"):
     dpg.add_text("Metéo actuelle à "+lieu+" : "+temperature+unite+" \nHumidité à "+humidité+"")
-"""     dpg.add_button(label="bouton")
+    dpg.add_button(label="bouton",callback=changerLieu)
     dpg.add_input_text(label="input", default_value="valeur par defaut")
-    dpg.add_slider_float(label="Slider", default_value=0.5, max_value=1) """
+    dpg.add_slider_float(label="Slider", default_value=0.5, max_value=1)
+
+    
 
 dpg.setup_dearpygui()
 dpg.show_viewport()
