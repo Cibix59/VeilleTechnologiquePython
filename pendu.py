@@ -52,12 +52,3 @@ while enJeu:
     if vie == 0:
         print("Game Over")
         quit()
-
-
-
-
-
-                
-
-
-
