@@ -7,7 +7,7 @@ import dearpygui.dearpygui as dpg
 
 
 session = HTMLSession()
-temperature =""
+
 
 def getMeteo (lieu):
     #f permet d'y ajouter un parametre
@@ -41,11 +41,11 @@ def getMeteo (lieu):
 
 
 def changerLieu(sender,data,userdata):
-    dpg.set_value("affichage",getMeteo(dpg.get_value("oui")))
+    dpg.set_value("affichage",getMeteo(dpg.get_value("inputText")))
 
 
 
-texteMeteo = getMeteo('riviere+du+loup')
+texteMeteo = getMeteo('Riviere du Loup')
 
 
 dpg.create_context()
@@ -53,8 +53,9 @@ dpg.create_viewport(title='Custom Title', width=600, height=300)
 
 with dpg.window(label="Ma météo :"):
     dpg.add_text(texteMeteo,tag = "affichage")
-    dpg.add_button(label="bouton",callback=changerLieu)
-    dpg.add_input_text(tag = "oui")
+    dpg.add_text("\nRechercher :")
+    dpg.add_input_text(tag = "inputText")
+    dpg.add_button(label="Valider",callback=changerLieu)
 
 dpg.setup_dearpygui()
 dpg.show_viewport()

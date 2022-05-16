@@ -14,7 +14,6 @@ def getMotActuel(mot, motDevine=[]):
         if mot[x] != ' ':
             motActuelTMP += '_ '
             for i in range(len(lettreTrouvees)):
-                print("mo  : "+motDevine[i])
                 if mot[x] == lettreTrouvees[i]:
                     motActuelTMP = motActuelTMP[:-2]
                     motActuelTMP += mot[x].upper() + ' '
@@ -29,7 +28,6 @@ i = random.randrange(0, len(f) - 1)
 
 mot = f[i][:-1]
 
-print(mot)
 
 while enJeu:
     lettreChoisie = str(input())
